@@ -1,0 +1,140 @@
+.main-body-content {
+  width: 100%;
+  padding: 3%;
+  padding-bottom: 10%;
+  @include flex-prop(space-evenly, flex-start, row);
+  background-color: rgb(229, 229, 229);
+  .main-body-container {
+    width: 60%;
+    background-color: aliceblue;
+    .main-body-card {
+      &:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      margin-bottom: 4%;
+      p {
+        padding: 3%;
+        font-size: 1.6rem;
+        width: 90%;
+        margin: auto;
+        &:nth-child(2) {
+          padding-bottom: 3%;
+          border-bottom: 1px solid gray;
+        }
+      }
+
+      ul {
+        @include flex-prop(center, center, row);
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid gray;
+        li {
+          font-size: 1.4rem;
+          @include flex-prop(flex-start, center, row);
+          width: 40%;
+          margin: 2%;
+          img {
+            width: 2em;
+            margin-right: 1em;
+          }
+        }
+      }
+      .body-card-text {
+        width: 50%;
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .body-card-images {
+        position: relative;
+        width: 50%;
+        img {
+          width: 4rem;
+          border-radius: 100%;
+          position: absolute;
+          top: -19px;
+          left: 30%;
+          border: 3px solid aliceblue;
+          &:nth-child(2) {
+            left: 45%;
+          }
+          &:nth-child(3) {
+            left: 60%;
+          }
+          &:nth-child(4) {
+            left: 75%;
+          }
+        }
+      }
+    }
+  }
+  .main-body-container2 {
+    width: 30%;
+    .main-body-card2 {
+      background-image: url("../image/dialog.png");
+      background-repeat: no-repeat;
+      background-position-y: -10px;
+      margin-bottom: 3%;
+      padding: 5%;
+      background-color: aliceblue;
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 12%;
+      }
+      .body-card2-data {
+        margin-top: 3%;
+        @include flex-prop(space-between, center, row);
+        .body-card2-image {
+          width: 70%;
+          margin-bottom: 2%;
+          @include flex-prop(space-evenly, center, row);
+          img {
+            width: 5rem;
+            border-radius: 100%;
+          }
+          .body-card2-user {
+            p {
+              font-size: 1.2rem;
+              &:nth-child(1) {
+                font-weight: bolder;
+                color: gray;
+              }
+            }
+          }
+        }
+        .body-card2-rating {
+          p {
+            font-size: 2rem;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .body-showall {
+      width: 100%;
+      p {
+        text-align: center;
+        font-size: 1.5rem;
+        color: $primary-color;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .main-body-content {
+    flex-direction: column;
+    .main-body-container {
+      width: 100%;
+      margin-bottom: 5%;
+    }
+    .main-body-container2 {
+      width: 100%;
+    }
+  }
+}

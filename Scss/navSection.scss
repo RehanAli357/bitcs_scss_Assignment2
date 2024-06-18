@@ -1,0 +1,91 @@
+.nav-section {
+  width: 100%;
+  padding: 5em 0;
+  @include flex-prop(space-between,center,row);
+   background-color: aliceblue;
+  .nav-section-logo {
+    flex: 0.5;
+    img {
+        margin-left: 2rem;
+      width: 60em;
+    }
+  }
+  .nav-section-search {
+    .nav-section-input{
+        position: relative;
+        background-color: rgb(216, 216, 216);
+        width: 80%;
+        border-radius: 30px;
+        margin: auto;
+        @include flex-prop(center,center,row);
+        input{
+            border: 50px;
+            padding: 5px 15px;
+            width: 100%;
+            font-size: 1.5rem;            
+        }
+        img{
+            width: 30em;
+            margin-right: 30em;
+        }
+    }
+    flex: 1;
+  }
+  .nav-section-personal{
+    @include flex-prop(flex-end,center,row);
+    flex: 0.5;
+    .nav-section-tag{
+        position: relative;
+        margin-right: 2rem;
+        img{
+            width: 40em;
+        }
+        span{
+            font-size: 1.2rem;
+            background-color: rgb(255, 26, 103);
+            height: 1.5em;
+            width: 1.5em;
+            padding: 0.3em;
+            position: absolute;
+            top: -9px;
+            left: 10px;
+            border-radius: 100%;
+        }
+
+    }
+    .nav-section-user{
+        margin-right: 2rem;
+       @include flex-prop(center,center,row);
+        img{
+            width: 60em;
+            border-radius: 100%;
+        }
+        p{
+            font-size: 1.5rem;
+            color: gray;
+        }
+    }
+  }
+}
+
+
+@media (max-width:425px) {
+  .nav-section{
+    flex-direction: row;
+    flex-wrap: wrap;
+    .nav-section-logo{
+      flex: 1;
+      order: 0;
+    }
+    .nav-section-personal{
+      flex: 1;
+      order: 0;
+    }
+    .nav-section-search{
+      margin-top: 2%;
+      order: 1;
+      width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+}

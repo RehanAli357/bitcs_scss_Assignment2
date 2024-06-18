@@ -1,0 +1,153 @@
+.main-body-header {
+  flex: 1.5;
+  background-color: aliceblue;
+
+  .main-body-images {
+    @include flex-prop(center, center, row);
+
+    img {
+      width: 33.3%;
+    }
+  }
+
+  .main-body-heading {
+    width: 100%;
+    @include flex-prop(space-between, flex-start, row);
+
+    .main-body-hotel {
+      @include flex-prop(flex-start, center, row);
+      flex: 1;
+
+      h1 {
+        font-size: 2.5rem;
+        color: gray;
+        margin: 0 3%;
+      }
+
+      img {
+        width: 8rem;
+      }
+    }
+
+    .main-body-route {
+      flex: 0.5;
+      @include flex-prop(space-between, center, row);
+
+      .main-body-pin {
+        @include flex-prop(center, center, row);
+        flex: 1;
+
+        img {
+          margin-right: 4%;
+          width: 2rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+          color: $primary-color;
+          text-decoration: underline;
+          font-weight: 600;
+        }
+      }
+
+      .main-body-votes {
+        background-color: $primary-color;
+        padding: 7% 1rem;
+        @include flex-prop(center, center, column);
+        color: aliceblue;
+
+        h3 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    @include flex-prop(center, center, column);
+    padding: 5% 0;
+
+    p {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 5%;
+      font-size: 2rem;
+      background-color: $primary-color;
+      padding: 1em 5em;
+      border-radius: 500px;
+      color: aliceblue;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+      &:hover::after {
+        top: 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        top: -100px;
+        transition: 0.3s ease-in-out;
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: top 0.3s ease;
+        left: 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      &::after {
+        content: "4 rooms left";
+        top: 100%;
+      }
+
+      &::before {
+        content: "Book Now!";
+        top: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .main-body-header {
+    .main-body-heading{
+      flex-direction: column;
+      .main-body-hotel{
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        h1{
+          margin-top: 2%;
+          font-size: 2rem;
+          text-align: center;
+        }
+        img{
+          margin-top: -4%;
+        }
+      }
+    }
+    .main-body-route{
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      .main-body-pin{
+        width: 50%;
+      }
+      
+    }
+  }
+}
